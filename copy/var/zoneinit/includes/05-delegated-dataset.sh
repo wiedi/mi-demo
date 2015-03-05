@@ -5,5 +5,7 @@ if zfs list ${DDS} 1>/dev/null 2>&1; then
 	zfs create ${DDS}/www || true
 	zfs set mountpoint=/var/www ${DDS}/www
 	zfs set compression=lz4     ${DDS}/www
+else
+	mkdir -p /var/www
 fi
 
